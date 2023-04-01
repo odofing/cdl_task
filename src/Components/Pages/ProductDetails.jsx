@@ -23,6 +23,7 @@ const ProductDetails = ({ item, setQuantity, tag }) => {
 
                     <input
                         type="number"
+                        className='form-control'
                         min="0"
                         onChange={(e) =>
                             setProductQuantity(
@@ -32,7 +33,7 @@ const ProductDetails = ({ item, setQuantity, tag }) => {
                     />
                     <button className='btn btn-success m-2'
                         onClick={() => setQuantity(product, productQuantity)} type='button'
-                    >submit</button>
+                    >Add to cart</button>
 
                 </div>
             </div>

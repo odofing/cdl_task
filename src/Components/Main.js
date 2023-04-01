@@ -15,12 +15,14 @@ Data.forEach(({ product }) => {
 const Main = () => {
     const [cartQty, setCartQty] = useState(allProducts);
     const [total, updateTotal] = useState((0));
+
     const productQty = (item, quantity) => {
         let newCartQty = { ...cartQty };
         newCartQty[item] += quantity;
         updateTotal(totalInCart(Data, newCartQty));
         setCartQty(newCartQty);
     }
+    console.log(cartQty)
     const totalInCart = (productList, quantities) => {
 
         let total = 0;
@@ -54,7 +56,7 @@ const Main = () => {
                 productList={Data}
             />
             <CartScreen
-                quantities={setCartQty}
+                qtys={cartQty}
                 total={total}
 
             />
