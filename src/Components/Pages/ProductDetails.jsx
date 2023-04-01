@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
-const ProductDetails = ({ item, setQuantity }) => {
+const ProductDetails = ({ item, setQuantity, tag }) => {
     const { product, price, discount, image, id } = item;
-    const [productQuantity, updateProductQuantity] = useState(0);
+    const [productQuantity, setProductQuantity] = useState(0);
+
 
     return (
         <>
@@ -24,7 +25,7 @@ const ProductDetails = ({ item, setQuantity }) => {
                         type="number"
                         min="0"
                         onChange={(e) =>
-                            updateProductQuantity(
+                            setProductQuantity(
                                 e.target.value > 0 ? Number(e.target.value) : 0
                             )
                         }

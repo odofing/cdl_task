@@ -13,6 +13,7 @@ const Products = ({ productList, setQuantity }) => {
 
                     <ProductDetails
                         item={product}
+                        tag={product.id}
                         key={product.item}
                         setQuantity={setQuantity}
                     />
