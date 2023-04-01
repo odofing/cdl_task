@@ -29,7 +29,7 @@ const ProductDetails = ({ item, setQuantity }) => {
                             )
                         }
                     />
-                    <button
+                    <button className='btn btn-success m-2'
                         onClick={() => setQuantity(product, productQuantity)} type='button'
                     >submit</button>
 
