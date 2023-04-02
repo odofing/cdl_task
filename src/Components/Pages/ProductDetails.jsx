@@ -10,14 +10,14 @@ const ProductDetails = ({ item, setQuantity, tag }) => {
             <div className="col-md-3 m-auto " key={id} >
                 <div className='card-body' >
                     <h3>{product}</h3>
-                    <img src={image} className="" alt="..." width='200px' height='200px' />
+                    <img src={image} className="" alt="..." width='150px' height='150px' />
                     <p>Price: £{price}</p>
                     <>
                         {
-                            discount === null ? <p className='discount'>Discount not available for this product</p>
-                                : <p className='card-text'><b>Discount:</b> Buy {discount.discountQty} items
+                            discount === null ? <small className='discount'>Discount not available for this product</small>
+                                : <small className='card-text'><b>Discount:</b> Buy {discount.discountQty} items
 
-                                    for  £{discount.discountPrice}</p>
+                                    for  £{discount.discountPrice.toFixed(2)}</small>
                         }
                     </>
 

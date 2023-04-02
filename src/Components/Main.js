@@ -22,13 +22,13 @@ const Main = () => {
         updateTotal(totalInCart(Data, newCartQty));
         setCartQty(newCartQty);
     }
-    console.log(cartQty)
+
     const totalInCart = (productList, quantities) => {
 
         let total = 0;
 
         productList.forEach(({ product, price, discount }) => {
-            //  console.log(product, price)
+
             if (quantities[product] === 0) return;
             if (discount) {
 
@@ -48,17 +48,21 @@ const Main = () => {
         return total;
     };
 
-
+    const emptyCart = () => {
+        setCartQty(allProducts)
+        updateTotal(0)
+    };
     return (
         <>
+            <CartScreen
+                qtys={cartQty}
+                emptyCart={emptyCart}
+                total={total}
+
+            />
             <Products
                 setQuantity={productQty}
                 productList={Data}
-            />
-            <CartScreen
-                qtys={cartQty}
-                total={total}
-
             />
         </>
     )
